@@ -1,402 +1,418 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grade 2 Demo: Bootstrap + GSAP Scroll</title>
 
-    <!-- Bootstrap CSS -->
+    <title>Portfolio Template — Studio</title>
+    <meta
+      name="description"
+      content="Plantilla profesional de portfolio con Bootstrap + GSAP. Responsive, accesible y lista para GitHub Pages."
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Bootstrap CSS (CDN) -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-..."
+      crossorigin="anonymous"
     />
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Custom Scripts -->
-    <script src="main.js" defer></script>
+    <!-- Tu CSS (siempre después de Bootstrap para customizarlo) -->
+    <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
-  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Portfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <main>
-      <!-- Hero Section -->
-      <section
-        id="hero"
-        class="hero min-vh-100 d-flex align-items-center position-relative overflow-hidden"
-      >
-        <!-- Parallax Background -->
-        <div class="hero-bg position-absolute w-100 h-100"></div>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#mainNav"
+    data-bs-smooth-scroll="true"
+    tabindex="0"
+  >
+    <a class="skip-link" href="#main">Saltar al contenido</a>
 
-        <!-- Floating shapes (GSAP animated) -->
-        <div class="floating-shapes">
-          <div class="shape shape-1"></div>
-          <div class="shape shape-2"></div>
-          <div class="shape shape-3"></div>
-        </div>
-
-        <div class="container position-relative z-1 text-center text-white">
-          <h1 class="display-1 fw-bold hero-title">John Designer</h1>
-          <p class="lead hero-subtitle mb-4">
-            Full-Stack Developer & Creative Technologist
-          </p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary btn-lg me-3"
-              >View Projects</a
-            >
-            <a href="#contact" class="btn btn-outline-light btn-lg"
-              >Get in Touch</a
-            >
-          </div>
-        </div>
-
-        <!-- Scroll indicator -->
-        <div
-          class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4"
-        >
-          <div class="mouse"></div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="py-5 py-lg-6 bg-dark">
+    <header class="site-header sticky-top">
+      <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-body">
         <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="about-image gsap-reveal">
-                <img
-                  src="https://picsum.photos/600/700?random=10"
-                  alt="Profile"
-                  class="img-fluid rounded-4 shadow-lg"
-                />
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h2 class="display-5 fw-bold mb-4 gsap-reveal">About Me</h2>
-              <p class="lead text-muted mb-4 gsap-reveal">
-                I'm a creative developer passionate about building beautiful,
-                functional, and accessible digital experiences.
-              </p>
-              <p class="text-muted gsap-reveal">
-                With 7+ years of experience spanning front-end development,
-                UI/UX design, and motion graphics, I bring a unique perspective
-                to every project. I believe in the power of animation to enhance
-                user experience without sacrificing performance.
-              </p>
+          <a class="navbar-brand brand" href="#top">STUDIO</a>
 
-              <!-- Skills with animated progress -->
-              <div class="skills mt-5">
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">React / Next.js</span>
-                    <span class="text-muted">95%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="95"></div>
-                  </div>
-                </div>
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">GSAP / Animation</span>
-                    <span class="text-muted">90%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">Node.js / Express</span>
-                    <span class="text-muted">85%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="85"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          <button
+            class="navbar-toggler nav-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-      <!-- Projects Section -->
-      <section id="projects" class="py-5 py-lg-6">
-        <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold gsap-reveal">Featured Projects</h2>
-            <p class="lead text-muted gsap-reveal">
-              A selection of my recent work
-            </p>
-          </div>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#works">Works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
 
-          <div class="row g-4">
-            <!-- Project Card 1 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=1"
-                    class="card-img-top"
-                    alt="E-commerce Platform"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">E-commerce Platform</h3>
-                  <p class="card-text text-muted small">
-                    Full-stack e-commerce solution with real-time inventory and
-                    Stripe integration.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >React</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Node.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >MongoDB</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
+            <div class="d-flex align-items-center gap-2">
+              <button class="btn btn-icon" type="button" aria-label="Carrito">
+                🛒
+              </button>
+              <button class="btn btn-ghost" type="button">Log in</button>
+              <a class="btn btn-solid" href="#contact">Get started</a>
 
-            <!-- Project Card 2 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=2"
-                    class="card-img-top"
-                    alt="Dashboard UI"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Analytics Dashboard</h3>
-                  <p class="card-text text-muted small">
-                    Real-time data visualization with interactive charts and
-                    dark mode.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >D3.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >WebSocket</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >GSAP</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=3"
-                    class="card-img-top"
-                    alt="Mobile App"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Fitness Mobile App</h3>
-                  <p class="card-text text-muted small">
-                    Cross-platform fitness tracker with workout plans and
-                    progress analytics.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >React Native</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Firebase</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=4"
-                    class="card-img-top"
-                    alt="Portfolio Site"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Agency Website</h3>
-                  <p class="card-text text-muted small">
-                    Award-winning agency site with scroll-driven animations and
-                    3D elements.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Three.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >GSAP</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 5 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=5"
-                    class="card-img-top"
-                    alt="SaaS Platform"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">SaaS Platform</h3>
-                  <p class="card-text text-muted small">
-                    Multi-tenant SaaS with role-based access and subscription
-                    management.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Next.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Prisma</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 6 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=6"
-                    class="card-img-top"
-                    alt="AI Tool"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">AI Content Generator</h3>
-                  <p class="card-text text-muted small">
-                    GPT-powered content creation tool with custom fine-tuning
-                    options.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >OpenAI</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Python</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="py-5 py-lg-6 bg-dark">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2 class="display-5 fw-bold mb-4 gsap-reveal">
-                Let's Work Together
-              </h2>
-              <p class="lead text-muted mb-5 gsap-reveal">
-                Have a project in mind? I'd love to hear about it. Let's create
-                something amazing.
-              </p>
-              <div class="gsap-reveal">
-                <a
-                  href="mailto:hello@example.com"
-                  class="btn btn-primary btn-lg mb-4"
-                >
-                  Start a Conversation
-                </a>
-              </div>
-              <div
-                class="social-links gsap-reveal d-flex justify-content-center gap-4"
+              <button
+                class="btn btn-icon"
+                type="button"
+                aria-label="Cambiar tema"
+                data-theme-toggle
               >
-                <a href="#" class="text-muted fs-4" aria-label="GitHub">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                ◐
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero py-5 py-lg-6">
+        <div class="container text-center hero__wrap">
+          <h1 class="hero__title mb-3">
+            <span class="hero__title-big d-block">Amelia</span>
+          </h1>
+
+          <div class="hero__media mx-auto mb-3" aria-hidden="true">
+            <img
+              class="hero__img"
+              src="./assets/images/portrait.jpg"
+              alt=""
+              loading="eager"
+            />
+          </div>
+
+          <p class="hero__lead mx-auto mb-0">
+            My journey began in Madrid, where I studied design and built
+            experience across branding, motion and digital products.
+          </p>
+        </div>
+      </section>
+
+      <section id="about" class="section section--line">
+        <div class="container">
+          <div class="row g-4 align-items-start">
+            <div class="col-12 col-lg-7">
+              <p class="eyebrow mb-2">About</p>
+              <h2 class="section-title mb-3">A studio-minded designer.</h2>
+              <p class="body">
+                Como diseñadora, me interesa el equilibrio entre estética
+                editorial y sistemas funcionales. Esta plantilla está pensada
+                para personalizarse rápidamente sin perder calidad.
+              </p>
+              <p class="body mb-0">
+                Hoy trabajo en identidad, dirección creativa y experiencias web.
+                Me obsesiona el detalle: ritmo, tipografía, interacción y
+                claridad.
+              </p>
+            </div>
+
+            <div class="col-12 col-lg-5">
+              <ul class="skills ms-lg-auto">
+                <li class="skills__item">Brand identity</li>
+                <li class="skills__item">Creative direction</li>
+                <li class="skills__item">Motion design</li>
+                <li class="skills__item">Figma</li>
+                <li class="skills__item">Web design</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mosaic mt-4" aria-label="Galería">
+            <figure class="mosaic__item">
+              <img
+                src="./assets/images/m1.jpg"
+                alt="Detalle de proyecto"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="mosaic__item">
+              <img
+                src="./assets/images/m2.jpg"
+                alt="Composición tipográfica"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="mosaic__item">
+              <img
+                src="./assets/images/m3.jpg"
+                alt="Fotografía de producto"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="mosaic__item">
+              <img
+                src="./assets/images/m4.jpg"
+                alt="Mockup editorial"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="mosaic__item mosaic__item--wide">
+              <img
+                src="./assets/images/m5.jpg"
+                alt="Objetos en estudio"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="works" class="section section--line">
+        <div class="container">
+          <h2 class="works__title text-center mb-4">Works</h2>
+
+          <article class="feature">
+            <div class="feature__media" data-parallax>
+              <img
+                src="./assets/images/featured.jpg"
+                alt="Proyecto destacado"
+                loading="lazy"
+              />
+            </div>
+            <div class="feature__meta mt-2">
+              <p class="caption mb-0">Studio</p>
+              <p class="caption mb-0">Creative direction</p>
+            </div>
+          </article>
+
+          <div class="row g-4 mt-4 align-items-center">
+            <div class="col-12 col-lg-7">
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <figure class="cardx">
+                    <img
+                      src="./assets/images/p1.jpg"
+                      alt="Proyecto Raw"
+                      loading="lazy"
                     />
-                  </svg>
-                </a>
-                <a href="#" class="text-muted fs-4" aria-label="LinkedIn">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    <figcaption class="cardx__cap">
+                      <p class="caption strong mb-0">Raw</p>
+                      <p class="caption mb-0">Web design & Motion</p>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-12 col-md-6">
+                  <figure class="cardx">
+                    <img
+                      src="./assets/images/p2.jpg"
+                      alt="Proyecto Sup brand"
+                      loading="lazy"
                     />
-                  </svg>
+                    <figcaption class="cardx__cap">
+                      <p class="caption strong mb-0">Sup brand</p>
+                      <p class="caption mb-0">Creative direction</p>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-5">
+              <h3 class="discover__title mb-2">Discover more projects</h3>
+              <p class="body mb-3">
+                Una plantilla debe contar una historia. Aquí enlaza a tus casos,
+                demos y repos.
+              </p>
+              <a class="btn btn-solid" href="#projects">View Projects</a>
+            </div>
+          </div>
+
+          <section
+            id="projects"
+            class="projects mt-5"
+            aria-label="Listado de proyectos"
+          >
+            <div class="row g-3">
+              <div class="col-12 col-md-6 col-lg-3">
+                <a class="project" href="#" aria-label="Abrir proyecto Alpha">
+                  <img
+                    src="./assets/images/g1.jpg"
+                    alt="Proyecto Alpha"
+                    loading="lazy"
+                  />
+                  <div class="project__info">
+                    <p class="caption strong mb-0">Alpha</p>
+                    <p class="caption mb-0">Branding · 2025</p>
+                  </div>
                 </a>
-                <a href="#" class="text-muted fs-4" aria-label="Twitter">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <a class="project" href="#" aria-label="Abrir proyecto Beta">
+                  <img
+                    src="./assets/images/g2.jpg"
+                    alt="Proyecto Beta"
+                    loading="lazy"
+                  />
+                  <div class="project__info">
+                    <p class="caption strong mb-0">Beta</p>
+                    <p class="caption mb-0">UI · 2025</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <a class="project" href="#" aria-label="Abrir proyecto Gamma">
+                  <img
+                    src="./assets/images/g3.jpg"
+                    alt="Proyecto Gamma"
+                    loading="lazy"
+                  />
+                  <div class="project__info">
+                    <p class="caption strong mb-0">Gamma</p>
+                    <p class="caption mb-0">Motion · 2024</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <a class="project" href="#" aria-label="Abrir proyecto Delta">
+                  <img
+                    src="./assets/images/g4.jpg"
+                    alt="Proyecto Delta"
+                    loading="lazy"
+                  />
+                  <div class="project__info">
+                    <p class="caption strong mb-0">Delta</p>
+                    <p class="caption mb-0">Editorial · 2024</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--line">
+        <div class="container">
+          <div class="row g-4 align-items-start">
+            <div class="col-12 col-lg-6">
+              <p class="eyebrow mb-2">Contact</p>
+              <h2 class="contact__title mb-0">
+                Let’s build the future together
+              </h2>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <form
+                class="formx"
+                action="#"
+                method="post"
+                aria-label="Formulario de contacto"
+              >
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label class="field">
+                      <span class="field__label">First name (required)</span>
+                      <input
+                        class="field__input"
+                        type="text"
+                        name="firstName"
+                        required
+                        autocomplete="given-name"
+                      />
+                    </label>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="field">
+                      <span class="field__label">Last name</span>
+                      <input
+                        class="field__input"
+                        type="text"
+                        name="lastName"
+                        autocomplete="family-name"
+                      />
+                    </label>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="field">
+                      <span class="field__label">Service</span>
+                      <select class="field__input" name="service">
+                        <option value="branding">Branding</option>
+                        <option value="web">Web design</option>
+                        <option value="motion">Motion</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="field">
+                      <span class="field__label">Email (required)</span>
+                      <input
+                        class="field__input"
+                        type="email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                      />
+                    </label>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="check">
+                      <input
+                        class="check__input"
+                        type="checkbox"
+                        name="updates"
+                      />
+                      <span class="check__text"
+                        >Sign up for news and updates</span
+                      >
+                    </label>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="field">
+                      <span class="field__label">Project description</span>
+                      <textarea
+                        class="field__input"
+                        name="message"
+                        rows="4"
+                      ></textarea>
+                    </label>
+                  </div>
+
+                  <div
+                    class="col-12 d-flex align-items-center justify-content-between gap-3 flex-wrap"
                   >
-                    <path
-                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                    />
-                  </svg>
-                </a>
+                    <button class="btn btn-solid" type="submit">Submit</button>
+                    <p
+                      class="caption mb-0"
+                      aria-live="polite"
+                      data-form-status
+                    ></p>
+                  </div>
+                </div>
+              </form>
+
+              <div
+                class="contact__bar mt-4 d-flex justify-content-between gap-3 flex-wrap"
+              >
+                <a class="contact__link" href="mailto:contact@studio.com"
+                  >contact@studio.com</a
+                >
+                <a class="contact__link" href="tel:+48762864075"
+                  >(+48) 762 864 075</a
+                >
               </div>
             </div>
           </div>
@@ -404,24 +420,42 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center text-muted small">
-      <div class="container">
-        <p class="mb-0">
-          &copy; 2025 John Designer. Built with Bootstrap 5 + GSAP.
-        </p>
+    <footer class="footer py-4">
+      <div class="container d-flex justify-content-between flex-wrap gap-3">
+        <p class="caption mb-0">© <span data-year></span> Portfolio Template</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a class="caption" href="#top">Back to top</a>
+          <a
+            class="caption"
+            href="https://github.com/TU-USUARIO/TU-REPO"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a class="caption" href="#">Privacy Policy</a>
+        </div>
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS (CDN) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-..."
+      crossorigin="anonymous"
+      defer
+    ></script>
 
-    <!-- GSAP + Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollToPlugin.min.js"></script>
+    <!-- GSAP + ScrollTrigger (CDN) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
 
-    <!-- Custom Scripts -->
-    <script src="main.js"></script>
+    <!-- Tu JS -->
+    <script src="./assets/js/main.js" defer></script>
   </body>
 </html>
