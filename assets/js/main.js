@@ -1,115 +1,176 @@
-(() => {
-  "use strict";
+// ANIMACION RATON CABECERA
+$(document).on("mousemove", function (e) {
+  var cursor = $(".cursor");
+  cursor.attr(
+    "style",
+    "top:" + (e.pageY - 15) + "px; left:" + (e.pageX - 15) + "px;"
+  );
+});
 
-  const status = document.querySelector("[data-form-status]");
-  const yearEl = document.querySelector("[data-year]");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+$(document).ready(function () {
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop() > 80) {
+      $("header").addClass("sticky");
+    } else {
+      $("header").removeClass("sticky");
+    }
+  });
+});
 
-  // Dark mode toggle (opcional, suma como tendencia)
-  const themeBtn = document.querySelector("[data-theme-toggle]");
-  const root = document.documentElement;
+// MENU HAMBURGUESA
 
-  const applyTheme = (theme) => {
-    root.classList.toggle("dark", theme === "dark");
-    try {
-      localStorage.setItem("theme", theme);
-    } catch {}
+// AOS
+$(document).ready(function () {
+  AOS.init({
+    duration: 1500,
+  });
+});
+
+// VALIDACION DE FORMULARIO NEWSLETTER
+$(document).ready(function () {
+  const $form = $(".footer-form");
+  const $inputs = $form.find("input");
+
+  // Función para validar campos
+  const validateField = ($input) => {
+    const $errorField = $input.next(".error-message");
+    let isValid = true;
+
+    if ($input.attr("id") === "name" || $input.attr("id") === "surname") {
+      const regex = /^[A-Za-z\s]{2,}$/;
+      isValid = regex.test($input.val());
+      $errorField.text(
+        isValid
+          ? ""
+          : "Este campo debe contener al menos 2 letras y solo caracteres alfabéticos."
+      );
+    } else if ($input.attr("id") === "email") {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      isValid = regex.test($input.val());
+      $errorField.text(
+        isValid ? "" : "Por favor, introduce un correo electrónico válido."
+      );
+    }
+
+    // Agregar clases de error o éxito
+    $input.toggleClass("error", !isValid);
+    $input.toggleClass("valid", isValid);
+
+    return isValid;
   };
 
-  try {
-    const saved = localStorage.getItem("theme");
-    if (saved) applyTheme(saved);
-  } catch {}
+  // Generar mensajes de error para cada input
+  $inputs.each(function () {
+    const $input = $(this);
+    $("<p>").addClass("error-message").insertAfter($input);
+  });
 
-  if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-      const next = root.classList.contains("dark") ? "light" : "dark";
-      applyTheme(next);
+  // Validar cada campo al escribir
+  $inputs.on("input", function () {
+    validateField($(this));
+  });
+
+  // Validar todo el formulario al enviar
+  $form.on("submit", function (event) {
+    event.preventDefault();
+    let isFormValid = true;
+
+    $inputs.each(function () {
+      const $input = $(this);
+      const isValid = validateField($input);
+      if (!isValid) isFormValid = false;
     });
+
+    if (isFormValid) {
+      alert("¡Suscripción exitosa!");
+      $form.trigger("reset");
+      $inputs.removeClass("valid");
+    } else {
+      alert("Por favor, corrige los errores antes de enviar.");
+    }
+  });
+});
+
+// CARRUSEL
+
+$(document).ready(function () {
+  let currentIndex = 1;
+  const slides = $(".slide");
+  let slidesCont = $(".slides");
+  let autoSlide;
+  let dots = $(".dot");
+
+  // función que mostrará el slide correspoondiente a un índice
+  function showSlide(indexSlide) {
+    let realIndex = indexSlide - 1;
+    let percTranslateX = -realIndex * 100;
+    slidesCont.css("transform", "translateX(" + percTranslateX + "%)");
+    dots.removeClass("active").eq(realIndex).addClass("active");
   }
 
-  // Form UX (sin backend)
-  const form = document.querySelector("form");
-  if (form && status) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      status.textContent =
-        "Formulario listo. Conecta Formspree para producción.";
-    });
+  // función para mostrar la anterior slide
+  function prevSlide() {
+    currentIndex = currentIndex - 1;
+    // currentIndex-=1
+
+    if (currentIndex < 1) {
+      currentIndex = slides.length;
+    }
+
+    showSlide(currentIndex);
   }
 
-  // GSAP animations
-  const prefersReduced = window.matchMedia?.(
-    "(prefers-reduced-motion: reduce)"
-  )?.matches;
-  if (prefersReduced) return; // Respeta accesibilidad
+  // función para mostrar la siguiente slide
+  function nextSlide() {
+    currentIndex = currentIndex + 1;
+    // currentIndex +=2;
 
-  if (!window.gsap) return;
-  gsap.registerPlugin(window.ScrollTrigger);
+    if (currentIndex > slides.length) {
+      currentIndex = 1;
+    }
 
-  // Hero intro
-  gsap.from(".hero__title-big", {
-    y: 18,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power2.out",
-  });
-
-  gsap.from(".hero__media", {
-    y: 18,
-    opacity: 0,
-    duration: 0.9,
-    delay: 0.1,
-    ease: "power2.out",
-  });
-
-  gsap.from(".hero__lead", {
-    y: 10,
-    opacity: 0,
-    duration: 0.7,
-    delay: 0.2,
-    ease: "power2.out",
-  });
-
-  // Scroll reveal sections
-  const revealTargets = [
-    "#about .row",
-    ".mosaic__item",
-    "#works .feature",
-    "#works .cardx",
-    "#projects .project",
-    "#contact .row",
-    "#contact .formx",
-    "#contact .contact__bar",
-  ];
-
-  revealTargets.forEach((sel) => {
-    document.querySelectorAll(sel).forEach((el) => {
-      gsap.from(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-        },
-        y: 16,
-        opacity: 0,
-        duration: 0.7,
-        ease: "power2.out",
-      });
-    });
-  });
-
-  // Parallax suave en el featured
-  const parallax = document.querySelector("[data-parallax]");
-  if (parallax) {
-    gsap.to(parallax, {
-      scrollTrigger: {
-        trigger: parallax,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 0.6,
-      },
-      y: -30,
-      ease: "none",
-    });
+    showSlide(currentIndex);
   }
-})();
+
+  // función para activar el slideshow automático
+  // esta función propia va a usar a su vez una función built-in sertInterval()
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 4000);
+  }
+
+  // función para detener el slide automático
+  // la llamaremos cuando el usuario interactue con el slideshow
+  // clearInterval()
+  function stopAutoslide() {
+    clearInterval(autoSlide);
+  }
+
+  startAutoSlide();
+});
+
+// FLECHA HACIA ARRIBA
+
+$(document).ready(function () {
+  irArriba();
+}); //Hacia arriba
+
+function irArriba() {
+  $(".ir-arriba").click(function () {
+    $("body,html").animate({ scrollTop: "0px" }, 1000);
+  });
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 0) {
+      $(".ir-arriba").slideDown(600);
+    } else {
+      $(".ir-arriba").slideUp(600);
+    }
+  });
+  $(".ir-abajo").click(function () {
+    $("body,html").animate({ scrollTop: "1000px" }, 1000);
+  });
+}
+
+// Año en footer
+$(document).ready(function () {
+  $("#year").text(new Date().getFullYear());
+});

@@ -1,80 +1,165 @@
-.container {
-  width: min(var(--container), calc(100% - 2 * var(--gap)));
+/* Utilidades de padding */
+.p-225 {
+  padding: 225px 0;
 }
 
-.section {
-  padding: clamp(48px, 7vw, 90px) 0;
+.p-125 {
+  padding: 90px 0;
 }
 
-.section--line {
-  border-top: 1px solid var(--line);
+/* Sección hero con fondo/parallax */
+.section-one {
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed; /* parallax CSS */
+  color: var(--white);
+  position: relative;
+  z-index: 1;
 }
 
-.site-header {
-  border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: blur(8px);
+.section-one::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-.hero {
-  padding: clamp(34px, 6vw, 80px) 0 clamp(40px, 7vw, 90px);
-}
-
-.hero__title {
-  line-height: 0.9;
+/* Tipos en hero */
+.section-one h1 {
+  font-size: 100px;
+  text-transform: uppercase;
   margin: 0;
+  font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: bold;
 }
 
-.hero__title-big {
-  font-size: var(--text-hero);
-  letter-spacing: -0.04em;
+.section-one p {
+  font-size: 20px;
 }
 
-.hero__media {
-  width: min(340px, 70vw);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transform: translateY(-10px);
+/* Sección texto */
+.section-two p {
+  max-width: 650px;
+  margin: 0 auto;
 }
 
-.hero__img {
-  aspect-ratio: 3/4;
-  object-fit: cover;
+/* Ajuste: cuando uses .p-125 y haya h1 */
+.p-125 h1 {
+  font-size: 80px;
 }
 
-.hero__lead {
-  max-width: 52ch;
-  font-size: var(--text-sm);
-  color: var(--muted);
+/* Sección negra “Crafted Work” */
+.section-history {
+  background-color: white;
+  color: var(--black);
+  padding: 90px 0;
+  text-align: center;
 }
 
-.mosaic {
+.section-history h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.section-history p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== Behind the Gems (layout como tu captura) ===== */
+.behind-gems {
+  background: #fff;
+  color: #000;
+}
+
+.behind-gems__wrap {
+  width: min(1100px, 92%);
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: start;
 }
 
-.mosaic__item {
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--line);
+/* En tu proyecto el body está centrado, así que aquí forzamos alineación izquierda */
+.behind-gems__text {
+  text-align: left;
 }
 
-.mosaic__item img {
-  aspect-ratio: 4/3;
-  object-fit: cover;
+.behind-gems__title {
+  margin: 0 0 18px;
+  font-weight: 900;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
 }
 
-.mosaic__item--wide {
-  grid-column: span 2;
+.behind-gems__p {
+  margin: 0 0 18px;
+  max-width: 52ch;
+  line-height: 1.7;
+  font-size: 0.98rem;
+  text-align: justify;
 }
 
-@media (max-width: 992px) {
-  .mosaic {
+.behind-gems__p--muted {
+  color: #666;
+}
+
+/* ===== Galería fotográfica ===== */
+.photo-gallery {
+  background: #fff;
+}
+
+.photo-gallery__grid {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.photo-gallery--chupa .photo-gallery__grid {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* Responsive: en móvil apila (texto arriba, foto abajo) */
+@media (max-width: 1100px) {
+  .photo-gallery--chupa .photo-gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .behind-gems__wrap {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .behind-gems__p {
+    max-width: 70ch;
+  }
+
+  .photo-gallery__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .mosaic__item--wide {
-    grid-column: span 2;
+}
+
+@media (max-width: 600px) {
+  .photo-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-gallery--chupa .photo-gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

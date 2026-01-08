@@ -1,461 +1,489 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Portfolio Template — Studio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gems by Gema</title>
     <meta
       name="description"
-      content="Plantilla profesional de portfolio con Bootstrap + GSAP. Responsive, accesible y lista para GitHub Pages."
+      content="Portfolio de Gema Garrido — Gems by Gema"
     />
-    <meta name="theme-color" content="#ffffff" />
 
-    <!-- Bootstrap CSS (CDN) -->
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-..."
-      crossorigin="anonymous"
     />
 
-    <!-- Tu CSS (siempre después de Bootstrap para customizarlo) -->
+    <!-- Mi CSS -->
     <link rel="stylesheet" href="./assets/css/index.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#mainNav"
-    data-bs-smooth-scroll="true"
-    tabindex="0"
-  >
-    <a class="skip-link" href="#main">Saltar al contenido</a>
-
-    <header class="site-header sticky-top">
-      <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-body">
-        <div class="container">
-          <a class="navbar-brand brand" href="#top">STUDIO</a>
-
-          <button
-            class="navbar-toggler nav-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarContent"
-            aria-controls="navbarContent"
-            aria-expanded="false"
-            aria-label="Abrir menú"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#works">Works</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-            </ul>
-
-            <div class="d-flex align-items-center gap-2">
-              <button class="btn btn-icon" type="button" aria-label="Carrito">
-                🛒
-              </button>
-              <button class="btn btn-ghost" type="button">Log in</button>
-              <a class="btn btn-solid" href="#contact">Get started</a>
-
-              <button
-                class="btn btn-icon"
-                type="button"
-                aria-label="Cambiar tema"
-                data-theme-toggle
-              >
-                ◐
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+  <body>
+    <header>
+      <div class="navbar">
+        <ul id="menu" class="menu">
+          <li><a href="#behind">about</a></li>
+          <li><a href="#gems">gems</a></li>
+          <li><a href="#footer">contact</a></li>
+        </ul>
+      </div>
     </header>
 
-    <main id="main">
-      <section id="top" class="hero py-5 py-lg-6">
-        <div class="container text-center hero__wrap">
-          <h1 class="hero__title mb-3">
-            <span class="hero__title-big d-block">Amelia</span>
-          </h1>
+    <main>
+      <div
+        id="home"
+        class="section-one p-225"
+        style="
+          background-image: url(https://ik.imagekit.io/gemagarrido/Portfolio/fondo2.jpeg);
+          padding: 300px 0;
+        "
+      >
+        <h1>Gems by Gema</h1>
+        <div class="cursor"></div>
+        <p>Graphic Designer Portfolio</p>
+        <a href="#behind" class="btn-area">Learn More</a>
+      </div>
+      <section id="behind" class="section-two p-125 behind-gems">
+        <div class="behind-gems__wrap">
+          <!-- Columna texto -->
+          <div class="behind-gems__text" data-aos="fade-right">
+            <h2 class="behind-gems__title">Behind the Gems</h2>
 
-          <div class="hero__media mx-auto mb-3" aria-hidden="true">
+            <p class="behind-gems__p">
+              Soy Gema Garrido, diseñadora de Segovia, un entorno donde la
+              tradición, el detalle y el trabajo bien hecho influyen de forma
+              natural en mi manera de crear. Cada proyecto nace de un proceso
+              cuidado, guiado por la curiosidad y decisiones pensadas. Para mí,
+              el buen diseño no se define solo por su apariencia, sino por su
+              funcionalidad y su capacidad de comunicar.
+            </p>
+
+            <p class="behind-gems__p behind-gems__p--muted">
+              I’m currently studying Multimedia and Graphic Design at UDIT —
+              Universidad de Diseño, Innovación y Tecnología in Madrid.
+              Alongside my studies, I’ve gained professional experience through
+              graphic design internships at TUI, a global travel agency, and
+              WERIT, a clothing brand. I’m also part of the Comisión de Festejos
+              de Cantimpalos (Segovia), where I manage social media and design
+              all visual materials and posters for local events.
+            </p>
+
+            <p class="behind-gems__p">
+              My work is driven by a strong interest in photography,
+              illustration, visual identity, and editorial design. I’m
+              comfortable working with tools such as Adobe Illustrator,
+              Photoshop, InDesign, After Effects, and Premiere, as well as
+              Figma, Visual Studio Code, and Procreate, which allow me to move
+              fluidly between concept, design, and digital execution.
+            </p>
+          </div>
+
+          <!-- Columna imagen -->
+          <figure class="behind-gems__media" data-aos="fade-left">
             <img
-              class="hero__img"
-              src="./assets/images/portrait.jpg"
-              alt=""
-              loading="eager"
+              class="behind-gems__img"
+              src="https://ik.imagekit.io/gemagarrido/Portfolio/PORTRAIT.png"
+              alt="Retrato de Gema Garrido"
+              loading="lazy"
             />
-          </div>
-
-          <p class="hero__lead mx-auto mb-0">
-            My journey began in Madrid, where I studied design and built
-            experience across branding, motion and digital products.
-          </p>
+          </figure>
         </div>
       </section>
 
-      <section id="about" class="section section--line">
-        <div class="container">
-          <div class="row g-4 align-items-start">
-            <div class="col-12 col-lg-7">
-              <p class="eyebrow mb-2">About</p>
-              <h2 class="section-title mb-3">A studio-minded designer.</h2>
-              <p class="body">
-                Como diseñadora, me interesa el equilibrio entre estética
-                editorial y sistemas funcionales. Esta plantilla está pensada
-                para personalizarse rápidamente sin perder calidad.
-              </p>
-              <p class="body mb-0">
-                Hoy trabajo en identidad, dirección creativa y experiencias web.
-                Me obsesiona el detalle: ritmo, tipografía, interacción y
-                claridad.
-              </p>
-            </div>
+      <div
+        id="gems"
+        class="section-one p-125"
+        style="
+          background-image: url(https://ik.imagekit.io/gemagarrido/Portfolio/fondo2.jpeg);
+        "
+      >
+        <h1 data-aos="fade-right">The Gems</h1>
+      </div>
 
-            <div class="col-12 col-lg-5">
-              <ul class="skills ms-lg-auto">
-                <li class="skills__item">Brand identity</li>
-                <li class="skills__item">Creative direction</li>
-                <li class="skills__item">Motion design</li>
-                <li class="skills__item">Figma</li>
-                <li class="skills__item">Web design</li>
-              </ul>
-            </div>
+      <div class="section-history p-125">
+        <h1>La Castilla Vacía</h1>
+        <p>
+          La Castilla Vacía is a photographic project that captures the quiet
+          rhythms of rural life in Castile, focusing on the province of Segovia.
+          Through intimate scenes and subtle details, the work reflects on
+          memory, territory, and the slow disappearance of ways of life deeply
+          rooted in the landscape.
+        </p>
+        <section class="photo-gallery p-125">
+          <div class="photo-gallery__grid">
+            <figure class="photo-gallery__item gsap-reveal" data-aos="fade-up">
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/1.png?updatedAt=1767894740433"
+                alt="La Castilla Vacía — fotografía 1"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/2.png?updatedAt=1767894740422"
+                alt="La Castilla Vacía — fotografía 2"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/3.png?updatedAt=1767894740603"
+                alt="La Castilla Vacía — fotografía 3"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/4.png?updatedAt=1767894740479"
+                alt="La Castilla Vacía — fotografía 4"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/5.png?updatedAt=1767894740427"
+                alt="La Castilla Vacía — fotografía 5"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/6.png?updatedAt=1767894740286"
+                alt="La Castilla Vacía — fotografía 6"
+                loading="lazy"
+              />
+            </figure>
           </div>
+        </section>
+      </div>
 
-          <div class="mosaic mt-4" aria-label="Galería">
-            <figure class="mosaic__item">
+      <div class="section-history p-125">
+        <h1>Gigi Studios</h1>
+        <p>
+          This 3D project explores form, material, and atmosphere through the
+          modeling of a pair of GIGI Studios glasses. Created using Maxon Cinema
+          4D, the piece places the object within a warm, welcoming scene,
+          focusing on detail, light, and texture to enhance both the product and
+          its environment.
+        </p>
+        <section class="photo-gallery p-125">
+          <div class="photo-gallery__grid">
+            <figure class="photo-gallery__item gsap-reveal" data-aos="fade-up">
               <img
-                src="./assets/images/m1.jpg"
-                alt="Detalle de proyecto"
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/clayrender%20luz%20amarilla.png?updatedAt=1767896089234"
+                alt=""
                 loading="lazy"
               />
             </figure>
-            <figure class="mosaic__item">
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
               <img
-                src="./assets/images/m2.jpg"
-                alt="Composición tipográfica"
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/clayrender%20luz%20blanca.png?updatedAt=1767896089061"
+                alt=""
                 loading="lazy"
               />
             </figure>
-            <figure class="mosaic__item">
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <img
-                src="./assets/images/m3.jpg"
-                alt="Fotografía de producto"
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/render1.jpeg?updatedAt=1767896088728"
+                alt=""
                 loading="lazy"
               />
             </figure>
-            <figure class="mosaic__item">
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
               <img
-                src="./assets/images/m4.jpg"
-                alt="Mockup editorial"
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/render2.png?updatedAt=1767896089219"
+                alt=""
                 loading="lazy"
               />
             </figure>
-            <figure class="mosaic__item mosaic__item--wide">
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <img
-                src="./assets/images/m5.jpg"
-                alt="Objetos en estudio"
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/Garrido.Gema_3.3_Gafas_PostPro%20(1).png?updatedAt=1767896089562"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/Garrido.Gema_3.3_Gafas_PostPro%20(2).png?updatedAt=1767896089595"
+                alt=""
                 loading="lazy"
               />
             </figure>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
-      <section id="works" class="section section--line">
-        <div class="container">
-          <h2 class="works__title text-center mb-4">Works</h2>
-
-          <article class="feature">
-            <div class="feature__media" data-parallax>
+      <div class="section-history p-125 photo-gallery--chupa">
+        <h1>Festive With Chupa Chups</h1>
+        <p>
+          This illustration project presents a Chupa Chups campaign inspired by
+          traditional Spanish festivities. Through playful visual language and
+          vibrant compositions, the project explores the connection between
+          popular culture, celebration, and illustration, reinterpreting iconic
+          elements of Spanish festivals through a contemporary graphic approach.
+        </p>
+        <section class="photo-gallery p-125">
+          <div class="photo-gallery__grid">
+            <figure class="photo-gallery__item gsap-reveal" data-aos="fade-up">
               <img
-                src="./assets/images/featured.jpg"
-                alt="Proyecto destacado"
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-01.jpg"
+                alt=""
                 loading="lazy"
               />
-            </div>
-            <div class="feature__meta mt-2">
-              <p class="caption mb-0">Studio</p>
-              <p class="caption mb-0">Creative direction</p>
-            </div>
-          </article>
+            </figure>
 
-          <div class="row g-4 mt-4 align-items-center">
-            <div class="col-12 col-lg-7">
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <figure class="cardx">
-                    <img
-                      src="./assets/images/p1.jpg"
-                      alt="Proyecto Raw"
-                      loading="lazy"
-                    />
-                    <figcaption class="cardx__cap">
-                      <p class="caption strong mb-0">Raw</p>
-                      <p class="caption mb-0">Web design & Motion</p>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="col-12 col-md-6">
-                  <figure class="cardx">
-                    <img
-                      src="./assets/images/p2.jpg"
-                      alt="Proyecto Sup brand"
-                      loading="lazy"
-                    />
-                    <figcaption class="cardx__cap">
-                      <p class="caption strong mb-0">Sup brand</p>
-                      <p class="caption mb-0">Creative direction</p>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-03.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
 
-            <div class="col-12 col-lg-5">
-              <h3 class="discover__title mb-2">Discover more projects</h3>
-              <p class="body mb-3">
-                Una plantilla debe contar una historia. Aquí enlaza a tus casos,
-                demos y repos.
-              </p>
-              <a class="btn btn-solid" href="#projects">View Projects</a>
-            </div>
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-04.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-05.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-02.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup3.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup4.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup2.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+
+            <figure
+              class="photo-gallery__item"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup6.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
           </div>
-
-          <section
-            id="projects"
-            class="projects mt-5"
-            aria-label="Listado de proyectos"
-          >
-            <div class="row g-3">
-              <div class="col-12 col-md-6 col-lg-3">
-                <a class="project" href="#" aria-label="Abrir proyecto Alpha">
-                  <img
-                    src="./assets/images/g1.jpg"
-                    alt="Proyecto Alpha"
-                    loading="lazy"
-                  />
-                  <div class="project__info">
-                    <p class="caption strong mb-0">Alpha</p>
-                    <p class="caption mb-0">Branding · 2025</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-12 col-md-6 col-lg-3">
-                <a class="project" href="#" aria-label="Abrir proyecto Beta">
-                  <img
-                    src="./assets/images/g2.jpg"
-                    alt="Proyecto Beta"
-                    loading="lazy"
-                  />
-                  <div class="project__info">
-                    <p class="caption strong mb-0">Beta</p>
-                    <p class="caption mb-0">UI · 2025</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-12 col-md-6 col-lg-3">
-                <a class="project" href="#" aria-label="Abrir proyecto Gamma">
-                  <img
-                    src="./assets/images/g3.jpg"
-                    alt="Proyecto Gamma"
-                    loading="lazy"
-                  />
-                  <div class="project__info">
-                    <p class="caption strong mb-0">Gamma</p>
-                    <p class="caption mb-0">Motion · 2024</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-12 col-md-6 col-lg-3">
-                <a class="project" href="#" aria-label="Abrir proyecto Delta">
-                  <img
-                    src="./assets/images/g4.jpg"
-                    alt="Proyecto Delta"
-                    loading="lazy"
-                  />
-                  <div class="project__info">
-                    <p class="caption strong mb-0">Delta</p>
-                    <p class="caption mb-0">Editorial · 2024</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section id="contact" class="section section--line">
-        <div class="container">
-          <div class="row g-4 align-items-start">
-            <div class="col-12 col-lg-6">
-              <p class="eyebrow mb-2">Contact</p>
-              <h2 class="contact__title mb-0">
-                Let’s build the future together
-              </h2>
-            </div>
-
-            <div class="col-12 col-lg-6">
-              <form
-                class="formx"
-                action="#"
-                method="post"
-                aria-label="Formulario de contacto"
-              >
-                <div class="row g-3">
-                  <div class="col-12 col-md-6">
-                    <label class="field">
-                      <span class="field__label">First name (required)</span>
-                      <input
-                        class="field__input"
-                        type="text"
-                        name="firstName"
-                        required
-                        autocomplete="given-name"
-                      />
-                    </label>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <label class="field">
-                      <span class="field__label">Last name</span>
-                      <input
-                        class="field__input"
-                        type="text"
-                        name="lastName"
-                        autocomplete="family-name"
-                      />
-                    </label>
-                  </div>
-
-                  <div class="col-12">
-                    <label class="field">
-                      <span class="field__label">Service</span>
-                      <select class="field__input" name="service">
-                        <option value="branding">Branding</option>
-                        <option value="web">Web design</option>
-                        <option value="motion">Motion</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </label>
-                  </div>
-
-                  <div class="col-12">
-                    <label class="field">
-                      <span class="field__label">Email (required)</span>
-                      <input
-                        class="field__input"
-                        type="email"
-                        name="email"
-                        required
-                        autocomplete="email"
-                      />
-                    </label>
-                  </div>
-
-                  <div class="col-12">
-                    <label class="check">
-                      <input
-                        class="check__input"
-                        type="checkbox"
-                        name="updates"
-                      />
-                      <span class="check__text"
-                        >Sign up for news and updates</span
-                      >
-                    </label>
-                  </div>
-
-                  <div class="col-12">
-                    <label class="field">
-                      <span class="field__label">Project description</span>
-                      <textarea
-                        class="field__input"
-                        name="message"
-                        rows="4"
-                      ></textarea>
-                    </label>
-                  </div>
-
-                  <div
-                    class="col-12 d-flex align-items-center justify-content-between gap-3 flex-wrap"
-                  >
-                    <button class="btn btn-solid" type="submit">Submit</button>
-                    <p
-                      class="caption mb-0"
-                      aria-live="polite"
-                      data-form-status
-                    ></p>
-                  </div>
-                </div>
-              </form>
-
-              <div
-                class="contact__bar mt-4 d-flex justify-content-between gap-3 flex-wrap"
-              >
-                <a class="contact__link" href="mailto:contact@studio.com"
-                  >contact@studio.com</a
-                >
-                <a class="contact__link" href="tel:+48762864075"
-                  >(+48) 762 864 075</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
-    <footer class="footer py-4">
-      <div class="container d-flex justify-content-between flex-wrap gap-3">
-        <p class="caption mb-0">© <span data-year></span> Portfolio Template</p>
-        <div class="d-flex gap-3 flex-wrap">
-          <a class="caption" href="#top">Back to top</a>
+    <footer id="footer">
+      <div class="footer-content footer-contact">
+        <!-- CTA + Instagram -->
+        <div class="footer-contact__left">
+          <h2 class="footer-contact__title">Let’s shape the next Gem.</h2>
+          <p class="footer-contact__text">
+            Every project starts with a conversation.
+          </p>
+
           <a
-            class="caption"
-            href="https://github.com/TU-USUARIO/TU-REPO"
+            class="footer-contact__ig"
+            href="https://www.instagram.com/75gems/"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub</a
           >
-          <a class="caption" href="#">Privacy Policy</a>
+            Instagram <span aria-hidden="true">↗</span>
+          </a>
         </div>
+
+        <!-- Formulario Contact -->
+        <div class="footer-contact__right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <label class="contact-form__label" for="contactName">Name</label>
+            <input
+              class="contact-form__input"
+              type="text"
+              id="contactName"
+              name="name"
+              required
+              minlength="2"
+              placeholder="Your name"
+            />
+            <p class="error-message" aria-live="polite"></p>
+
+            <label class="contact-form__label" for="contactEmail">Email</label>
+            <input
+              class="contact-form__input"
+              type="email"
+              id="contactEmail"
+              name="email"
+              required
+              placeholder="youremail@email.com"
+            />
+            <p class="error-message" aria-live="polite"></p>
+
+            <label class="contact-form__label" for="contactMessage"
+              >Message</label
+            >
+            <textarea
+              class="contact-form__textarea"
+              id="contactMessage"
+              name="message"
+              rows="5"
+              required
+              minlength="10"
+              placeholder="Tell me what you need..."
+            ></textarea>
+            <p class="error-message" aria-live="polite"></p>
+
+            <button class="contact-form__btn" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Gems by Gema</p>
       </div>
     </footer>
 
-    <!-- Bootstrap JS (CDN) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-..."
-      crossorigin="anonymous"
-      defer
-    ></script>
+    <!-- JQUERY  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- GSAP + ScrollTrigger (CDN) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
-      defer
-    ></script>
+    <!-- AOS JS  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Tu JS -->
-    <script src="./assets/js/main.js" defer></script>
+    <!-- MI SCRIPT  -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
