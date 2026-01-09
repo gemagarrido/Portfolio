@@ -1,4 +1,4 @@
-/* ===== 404 page (Gems aesthetic) ===== */
+/* ===== 404 page  ===== */
 
 .error-hero {
   min-height: 100vh;
@@ -60,7 +60,6 @@
   flex-wrap: wrap;
 }
 
-/* Botones con estética tuya (tipo btn-area pero más compactos) */
 .error-btn {
   display: inline-block;
   border: 2px solid #ececec;

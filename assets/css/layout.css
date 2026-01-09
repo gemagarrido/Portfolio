@@ -1,9 +1,9 @@
-/* Espacio para navbar fixed */
+
 main {
   padding-top: 70px;
 }
 
-/* Utilidades de padding fluidas */
+
 .p-225 {
   padding: clamp(8rem, 18vw, 18rem) 0;
 }
@@ -12,7 +12,7 @@ main {
   padding: clamp(4rem, 8vw, 6rem) 0;
 }
 
-/* HERO / SECCIONES con fondo */
+/* HERO */
 .section-one {
   background-position: center center;
   background-size: cover;
@@ -48,7 +48,7 @@ main {
   margin-top: 0.75rem;
 }
 
-/* Título “The Gems” */
+
 .section-title h2 {
   font-size: clamp(2.4rem, 6vw, 5rem);
   font-weight: 800;
@@ -58,7 +58,7 @@ main {
   text-align: center;
 }
 
-/* Sección texto */
+
 .section-two {
   background: #fff;
   color: #000;
