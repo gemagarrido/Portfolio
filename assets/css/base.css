@@ -1,37 +1,72 @@
-/* Tipografía (clases opcionales que ya tenías) */
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* Variables */
 :root {
   --white: #ececec;
   --black: #151515;
   --grey: #555;
   --accent-color: #891919;
+
+  --radius: 14px;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* Reset / base */
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
   scroll-behavior: smooth;
-  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
   font-family: "Poppins", sans-serif;
-  text-align: center;
+  line-height: 1.5;
+  background: var(--black);
+  color: var(--white);
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  background: #fff;
+  color: #000;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  z-index: 9999;
+}
+.skip-link:focus {
+  left: 1rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: var(--white);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: exclusion;
+  transition: all 0.1s ease-out;
+  pointer-events: none;
+}
+
+h1:hover + .cursor {
+  transform: scale(5);
 }

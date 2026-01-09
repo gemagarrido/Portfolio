@@ -1,86 +1,90 @@
-/* Utilidades de padding */
+/* Espacio para navbar fixed */
+main {
+  padding-top: 70px;
+}
+
+/* Utilidades de padding fluidas */
 .p-225 {
-  padding: 225px 0;
+  padding: clamp(8rem, 18vw, 18rem) 0;
 }
 
 .p-125 {
-  padding: 90px 0;
+  padding: clamp(4rem, 8vw, 6rem) 0;
 }
 
-/* Sección hero con fondo/parallax */
+/* HERO / SECCIONES con fondo */
 .section-one {
   background-position: center center;
-  -webkit-background-size: cover;
   background-size: cover;
-  background-attachment: fixed; /* parallax CSS */
+  background-attachment: fixed;
   color: var(--white);
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .section-one::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
   z-index: -1;
 }
 
-/* Tipos en hero */
+.hero__inner {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
 .section-one h1 {
-  font-size: 100px;
+  font-size: clamp(2.8rem, 6.5vw, 6.25rem);
   text-transform: uppercase;
-  margin: 0;
-  font-family: "Poppins", serif;
   font-weight: 800;
-  font-style: bold;
+  letter-spacing: 0.04em;
 }
 
 .section-one p {
-  font-size: 20px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-top: 0.75rem;
 }
 
-/* Sección texto */
-.section-two p {
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-/* Ajuste: cuando uses .p-125 y haya h1 */
-.p-125 h1 {
-  font-size: 80px;
-}
-
-/* Sección negra “Crafted Work” */
-.section-history {
-  background-color: white;
-  color: var(--black);
-  padding: 90px 0;
+/* Título “The Gems” */
+.section-title h2 {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
   text-align: center;
 }
 
-.section-history h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-
-.section-history p {
-  font-size: 20px;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* ===== Behind the Gems (layout como tu captura) ===== */
-.behind-gems {
+/* Sección texto */
+.section-two {
   background: #fff;
   color: #000;
 }
 
+/* Proyectos */
+.section-history {
+  background-color: #fff;
+  color: var(--black);
+  text-align: center;
+}
+
+.section-history h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 18px;
+  font-weight: 800;
+}
+
+.section-history p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 72ch;
+  margin: 0 auto;
+}
+
+/* Behind the Gems */
 .behind-gems__wrap {
   width: min(1100px, 92%);
   margin: 0 auto;
@@ -90,7 +94,6 @@
   align-items: start;
 }
 
-/* En tu proyecto el body está centrado, así que aquí forzamos alineación izquierda */
 .behind-gems__text {
   text-align: left;
 }
@@ -98,7 +101,7 @@
 .behind-gems__title {
   margin: 0 0 18px;
   font-weight: 900;
-  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   letter-spacing: -0.02em;
 }
 
@@ -107,59 +110,66 @@
   max-width: 52ch;
   line-height: 1.7;
   font-size: 0.98rem;
-  text-align: justify;
 }
 
 .behind-gems__p--muted {
   color: #666;
 }
 
-/* ===== Galería fotográfica ===== */
+/* Galerías */
 .photo-gallery {
-  background: #fff;
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .photo-gallery__grid {
   width: min(1200px, 92%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas desktop */
   gap: 24px;
 }
 
-.photo-gallery--chupa .photo-gallery__grid {
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-}
+/* Responsive */
 
-/* Responsive: en móvil apila (texto arriba, foto abajo) */
-@media (max-width: 1100px) {
-  .photo-gallery--chupa .photo-gallery__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+/* Tablet */
 @media (max-width: 900px) {
+  .photo-gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .behind-gems__wrap {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
-  .behind-gems__p {
-    max-width: 70ch;
+  .behind-gems__text {
+    order: 1;
   }
 
-  .photo-gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .behind-gems__media {
+    order: 2; /* imagen debajo del texto */
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .photo-gallery__grid {
     grid-template-columns: 1fr;
   }
 
-  .photo-gallery--chupa .photo-gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .behind-gems__title {
+    font-size: 1.8rem; /* antes más grande */
+  }
+
+  .behind-gems__p {
+    font-size: 0.92rem; /* un poco más pequeño */
+    line-height: 1.65;
+  }
+}
+
+/* Fallback parallax en móvil (mejor compatibilidad) */
+@media (max-width: 768px) {
+  .section-one {
+    background-attachment: scroll;
   }
 }

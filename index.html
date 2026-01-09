@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#151515" />
+
     <title>Gems by Gema</title>
     <meta
       name="description"
@@ -17,48 +19,78 @@
       rel="stylesheet"
     />
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap (para hamburguesa real sin complicarte) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Mi CSS -->
+    <!-- Tu CSS -->
     <link rel="stylesheet" href="./assets/css/index.css" />
-
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
-    <header>
-      <div class="navbar">
-        <ul id="menu" class="menu">
-          <li><a href="#behind">about</a></li>
-          <li><a href="#gems">gems</a></li>
-          <li><a href="#footer">contact</a></li>
-        </ul>
-      </div>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-gems">
+        <div class="container-fluid px-4">
+          <a class="navbar-brand brand" href="#home">Gems by Gema</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="mainNav"
+          >
+            <ul class="navbar-nav gap-lg-5 text-uppercase tracking">
+              <li class="nav-item">
+                <a class="nav-link" href="#behind">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gems">gems</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <main>
-      <div
+    <main id="main">
+      <!-- HERO -->
+      <section
         id="home"
-        class="section-one p-225"
+        class="section-one hero p-225"
         style="
           background-image: url(https://ik.imagekit.io/gemagarrido/Portfolio/fondo2.jpeg);
-          padding: 300px 0;
         "
       >
-        <h1>Gems by Gema</h1>
-        <div class="cursor"></div>
-        <p>Graphic Designer Portfolio</p>
-        <a href="#behind" class="btn-area">Learn More</a>
-      </div>
+        <div class="hero__inner">
+          <h1>Gems by Gema</h1>
+          <div class="cursor" aria-hidden="true"></div>
+          <p>Graphic Designer Portfolio</p>
+          <a href="#behind" class="btn-area">Learn More</a>
+        </div>
+      </section>
+
+      <!-- BEHIND -->
       <section id="behind" class="section-two p-125 behind-gems">
         <div class="behind-gems__wrap">
-          <!-- Columna texto -->
-          <div class="behind-gems__text" data-aos="fade-right">
+          <div class="behind-gems__text">
             <h2 class="behind-gems__title">Behind the Gems</h2>
 
             <p class="behind-gems__p">
@@ -74,46 +106,45 @@
               I’m currently studying Multimedia and Graphic Design at UDIT —
               Universidad de Diseño, Innovación y Tecnología in Madrid.
               Alongside my studies, I’ve gained professional experience through
-              graphic design internships at TUI, a global travel agency, and
-              WERIT, a clothing brand. I’m also part of the Comisión de Festejos
-              de Cantimpalos (Segovia), where I manage social media and design
-              all visual materials and posters for local events.
+              graphic design internships at TUI and WERIT. I’m also part of the
+              Comisión de Festejos de Cantimpalos (Segovia), where I manage
+              social media and design all visual materials and posters for local
+              events.
             </p>
 
             <p class="behind-gems__p">
               My work is driven by a strong interest in photography,
               illustration, visual identity, and editorial design. I’m
-              comfortable working with tools such as Adobe Illustrator,
-              Photoshop, InDesign, After Effects, and Premiere, as well as
-              Figma, Visual Studio Code, and Procreate, which allow me to move
-              fluidly between concept, design, and digital execution.
+              comfortable working with Adobe Illustrator, Photoshop, InDesign,
+              After Effects, Premiere, Figma, Visual Studio Code, and Procreate.
             </p>
           </div>
 
-          <!-- Columna imagen -->
-          <figure class="behind-gems__media" data-aos="fade-left">
+          <figure class="behind-gems__media">
             <img
               class="behind-gems__img"
               src="https://ik.imagekit.io/gemagarrido/Portfolio/PORTRAIT.png"
-              alt="Retrato de Gema Garrido"
+              alt="Foto de Gema Garrido"
               loading="lazy"
             />
           </figure>
         </div>
       </section>
 
-      <div
+      <!-- THE GEMS -->
+      <section
         id="gems"
-        class="section-one p-125"
+        class="section-one p-125 section-title"
         style="
           background-image: url(https://ik.imagekit.io/gemagarrido/Portfolio/fondo2.jpeg);
         "
       >
-        <h1 data-aos="fade-right">The Gems</h1>
-      </div>
+        <h2>The Gems</h2>
+      </section>
 
-      <div class="section-history p-125">
-        <h1>La Castilla Vacía</h1>
+      <!-- PROYECTO 1 -->
+      <section class="section-history p-125">
+        <h2>La Castilla Vacía</h2>
         <p>
           La Castilla Vacía is a photographic project that captures the quiet
           rhythms of rural life in Castile, focusing on the province of Segovia.
@@ -121,69 +152,45 @@
           memory, territory, and the slow disappearance of ways of life deeply
           rooted in the landscape.
         </p>
-        <section class="photo-gallery p-125">
+
+        <div class="photo-gallery">
           <div class="photo-gallery__grid">
-            <figure class="photo-gallery__item gsap-reveal" data-aos="fade-up">
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/1.png?updatedAt=1767894740433"
                 alt="La Castilla Vacía — fotografía 1"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="50"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/2.png?updatedAt=1767894740422"
                 alt="La Castilla Vacía — fotografía 2"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/3.png?updatedAt=1767894740603"
                 alt="La Castilla Vacía — fotografía 3"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="150"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/4.png?updatedAt=1767894740479"
                 alt="La Castilla Vacía — fotografía 4"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/5.png?updatedAt=1767894740427"
                 alt="La Castilla Vacía — fotografía 5"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/6.png?updatedAt=1767894740286"
                 alt="La Castilla Vacía — fotografía 6"
@@ -191,11 +198,12 @@
               />
             </figure>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
-      <div class="section-history p-125">
-        <h1>Gigi Studios</h1>
+      <!-- PROYECTO 2 -->
+      <section class="section-history p-125">
+        <h2>Gigi Studios</h2>
         <p>
           This 3D project explores form, material, and atmosphere through the
           modeling of a pair of GIGI Studios glasses. Created using Maxon Cinema
@@ -203,213 +211,154 @@
           focusing on detail, light, and texture to enhance both the product and
           its environment.
         </p>
-        <section class="photo-gallery p-125">
+
+        <div class="photo-gallery">
           <div class="photo-gallery__grid">
-            <figure class="photo-gallery__item gsap-reveal" data-aos="fade-up">
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/clayrender%20luz%20amarilla.png?updatedAt=1767896089234"
-                alt=""
+                alt="Gigi Studios — imagen 1"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="50"
-            >
+            <!-- <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/clayrender%20luz%20blanca.png?updatedAt=1767896089061"
-                alt=""
+                alt="Gigi Studios — imagen 2"
                 loading="lazy"
               />
-            </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            </figure> -->
+            <!-- <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/render1.jpeg?updatedAt=1767896088728"
-                alt=""
+                alt="Gigi Studios — imagen 3"
                 loading="lazy"
               />
-            </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="150"
-            >
+            </figure> -->
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/render2.png?updatedAt=1767896089219"
-                alt=""
+                alt="Gigi Studios — imagen 4"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <!-- <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/Garrido.Gema_3.3_Gafas_PostPro%20(1).png?updatedAt=1767896089562"
-                alt=""
+                alt="Gigi Studios — imagen 5"
                 loading="lazy"
               />
-            </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
+            </figure> -->
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/Garrido.Gema_3.3_Gafas_PostPro%20(2).png?updatedAt=1767896089595"
-                alt=""
+                alt="Gigi Studios — imagen 6"
                 loading="lazy"
               />
             </figure>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
-      <div class="section-history p-125 photo-gallery--chupa">
-        <h1>Festive With Chupa Chups</h1>
+      <!-- PROYECTO 3 -->
+      <section class="section-history p-125 photo-gallery--chupa">
+        <h2>Festive With Chupa Chups</h2>
         <p>
           This illustration project presents a Chupa Chups campaign inspired by
           traditional Spanish festivities. Through playful visual language and
           vibrant compositions, the project explores the connection between
-          popular culture, celebration, and illustration, reinterpreting iconic
-          elements of Spanish festivals through a contemporary graphic approach.
+          popular culture, celebration, and illustration.
         </p>
-        <section class="photo-gallery p-125">
+
+        <div class="photo-gallery">
           <div class="photo-gallery__grid">
-            <figure class="photo-gallery__item gsap-reveal" data-aos="fade-up">
+            <!-- <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-01.jpg"
-                alt=""
+                alt="Chupa Chups — 1"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="50"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-03.jpg"
-                alt=""
+                alt="Chupa Chups — 2"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-04.jpg"
-                alt=""
+                alt="Chupa Chups — 3"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="150"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-05.jpg"
-                alt=""
+                alt="Chupa Chups — 4"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/chupachups-02.jpg"
-                alt=""
+                alt="Chupa Chups — 5"
+                loading="lazy"
+              />
+            </figure> -->
+
+            <figure class="photo-gallery__item">
+              <img
+                src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup5.jpg"
+                alt="Chupa Chups — mockup 1"
                 loading="lazy"
               />
             </figure>
 
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup3.jpg"
-                alt=""
+                alt="Chupa Chups — mockup 1"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup4.jpg"
-                alt=""
+                alt="Chupa Chups — mockup 2"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup1.jpg"
-                alt=""
+                alt="Chupa Chups — mockup 3"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup2.jpg"
-                alt=""
+                alt="Chupa Chups — mockup 4"
                 loading="lazy"
               />
             </figure>
-
-            <figure
-              class="photo-gallery__item"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
+            <figure class="photo-gallery__item">
               <img
                 src="https://ik.imagekit.io/gemagarrido/Portfolio/Mockup6.jpg"
-                alt=""
+                alt="Chupa Chups — mockup 5"
                 loading="lazy"
               />
             </figure>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
 
+    <!-- FOOTER CONTACT -->
     <footer id="footer">
       <div class="footer-content footer-contact">
-        <!-- CTA + Instagram -->
         <div class="footer-contact__left">
           <h2 class="footer-contact__title">Let’s shape the next Gem.</h2>
           <p class="footer-contact__text">
@@ -424,9 +373,11 @@
           >
             Instagram <span aria-hidden="true">↗</span>
           </a>
+        
+          <a class="footer-contact__lost" href="./404.html">Lost a gem? <span aria-hidden="true">↗</span></a>
+
         </div>
 
-        <!-- Formulario Contact -->
         <div class="footer-contact__right">
           <form class="contact-form" id="contactForm" novalidate>
             <label class="contact-form__label" for="contactName">Name</label>
@@ -439,7 +390,6 @@
               minlength="2"
               placeholder="Your name"
             />
-            <p class="error-message" aria-live="polite"></p>
 
             <label class="contact-form__label" for="contactEmail">Email</label>
             <input
@@ -450,7 +400,6 @@
               required
               placeholder="youremail@email.com"
             />
-            <p class="error-message" aria-live="polite"></p>
 
             <label class="contact-form__label" for="contactMessage"
               >Message</label
@@ -464,7 +413,6 @@
               minlength="10"
               placeholder="Tell me what you need..."
             ></textarea>
-            <p class="error-message" aria-live="polite"></p>
 
             <button class="contact-form__btn" type="submit">Send</button>
           </form>
@@ -476,14 +424,20 @@
       </div>
     </footer>
 
-    <!-- JQUERY  -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Flecha arriba -->
+    <button class="ir-arriba" type="button" aria-label="Volver arriba">
+      ↑
+    </button>
 
-    <!-- AOS JS  -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Bootstrap JS (necesario para hamburguesa/collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- MI SCRIPT  -->
+    <!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+
+    <!-- Tu JS limpio -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

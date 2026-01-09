@@ -1,0 +1,98 @@
+/* ===== 404 page (Gems aesthetic) ===== */
+
+.error-hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+
+  background-image: url("https://ik.imagekit.io/gemagarrido/Portfolio/fondo2.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.error-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.error-card {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 92%);
+  padding: clamp(2.2rem, 5vw, 4rem);
+
+  border: 1px solid rgba(236, 236, 236, 0.18);
+  background: rgba(21, 21, 21, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.error-code {
+  font-size: clamp(4rem, 10vw, 7.2rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.error-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  margin: 10px 0 10px;
+  opacity: 0.95;
+}
+
+.error-text {
+  margin: 0 auto 22px;
+  max-width: 56ch;
+  line-height: 1.7;
+  color: rgba(236, 236, 236, 0.85);
+  font-size: 1rem;
+}
+
+.error-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Botones con estética tuya (tipo btn-area pero más compactos) */
+.error-btn {
+  display: inline-block;
+  border: 2px solid #ececec;
+  color: #ececec;
+  text-decoration: none;
+  padding: 10px 18px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.error-btn:hover {
+  background: #ececec;
+  color: #151515;
+}
+
+.error-link {
+  display: inline-block;
+  color: #ececec;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 14px;
+
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(236, 236, 236, 0.35);
+  transition: opacity 0.25s ease, border-color 0.25s ease;
+}
+
+.error-link:hover {
+  opacity: 0.75;
+  border-color: rgba(236, 236, 236, 0.6);
+}
